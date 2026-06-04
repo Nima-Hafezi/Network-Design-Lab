@@ -85,16 +85,27 @@ Network-Design-Lab/
 │
 ├── configs/
 │   ├── router-config.txt
-│   ├── switch1-config.txt
-│   └── switch2-config.txt
+│   ├── core-switch-config.txt
+│   ├── switch-mgmt-config.txt
+│   ├── switch-tech-config.txt
+│   ├── switch-fin-config.txt
+│   └── switch-edu-config.txt
 │
 ├── screenshots/
 │   ├── vlan-config.png
+│   ├── trunk-links.png
+│   ├── ssh-test.png
 │   ├── ping-test.png
+│   ├── ip-config.png
 │   ├── dhcp-test.png
-│   └── ssh-test.png
+│   └── acl-test.png
 │
 └── documentation/
+│   ├── vlan-design.md
+│   ├── subnetting-table.md
+│   ├── acl-policy.md
+│   ├── project-notes.md
+│   └── troubleshooting-notes.md
 ```
 
 ---
