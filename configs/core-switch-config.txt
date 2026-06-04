@@ -1,0 +1,57 @@
+! Enterprise Network Design Lab
+! Author: Nima Hafezi
+! Device: SW-CORE
+! Purpose: Core Switching, Trunking, Native VLAN, Inter-VLAN Connectivity
+
+enable
+configure terminal
+
+hostname SW-CORE
+
+no ip domain-lookup
+
+vlan 10
+ name MGMT
+
+vlan 20
+ name TECH
+
+vlan 30
+ name FIN
+
+vlan 40
+ name EDU
+
+vlan 99
+ name MGMT-ONLY
+
+vlan 999
+ name NATIVE
+
+interface vlan 20
+ ip address 192.168.10.66 255.255.255.192
+ no shutdown
+ exit
+
+ip default-gateway 192.168.10.65
+
+interface gigabitEthernet1/3
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+ no shutdown
+ exit
+
+interface range gigabitEthernet1/4-7
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+ no shutdown
+ exit
+
+interface range gigabitEthernet1/1-2, gigabitEthernet1/8-10
+ shutdown
+ exit
+
+end
+write memory

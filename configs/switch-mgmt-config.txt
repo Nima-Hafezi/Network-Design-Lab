@@ -1,0 +1,43 @@
+! Enterprise Network Design Lab
+! Author: Nima Hafezi
+! Device: SW-MGMT
+! Purpose: Access Switching for MGMT VLAN, Voice VLAN Support, Port Security
+
+enable
+configure terminal
+
+hostname SW-MGMT
+
+no ip domain-lookup
+
+vlan 10
+ name MGMT-DATA
+
+vlan 99
+ name MGMT-ONLY
+
+vlan 150
+ name MGMT-VOICE
+
+vlan 999
+ name NATIVE
+
+interface gigabitEthernet0/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,99,150,999
+ no shutdown
+ exit
+
+interface range fastEthernet0/1-24
+ switchport mode access
+ switchport access vlan 10
+ switchport voice vlan 150
+ switchport nonegotiate
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ no shutdown
+ exit
+
+end
+write memory
