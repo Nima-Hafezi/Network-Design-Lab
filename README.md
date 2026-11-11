@@ -131,15 +131,15 @@ The following tests were performed to verify network functionality:
 
 ### DHCP Testing
 
-(Add screenshot here)
+![DHCP Testing](screenshots/dhcp-test.png)
 
 ### Connectivity Test
 
-(Add screenshot here)
+![Connectivity Test](screenshots/ping-test.png)
 
 ### SSH Access
 
-(Add screenshot here)
+![SSH Access](screenshots/ssh-test.png)
 
 ---
 
