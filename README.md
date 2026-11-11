@@ -127,7 +127,7 @@ The following tests were performed to verify network functionality:
 
 ### VLAN Configuration
 
-(Add screenshot here)
+![VLAN Configuration](https://github.com/Nima-Hafezi/Network-Design-Lab/edit/main/README.md#:~:text=trunk%2Dlinks.png-,vlan%2Dconfig.png,-topology)
 
 ### DHCP Testing
 
